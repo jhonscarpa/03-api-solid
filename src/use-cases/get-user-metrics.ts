@@ -5,7 +5,7 @@ interface IPropsGetUserMetricsUseCaseRequest {
 }
 
 interface IPropsGetUserMetricsUseCaseResponse {
-  checkInsCount: Number
+  checkInsCount: number
 }
 
 export class GetUserMetricsUseCase {
