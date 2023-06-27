@@ -3,6 +3,7 @@ import { CheckInsRepository } from './../repositories/check-ins-repository'
 
 interface IPropsFetchUserCheckInsHistoryUseCaseRequest {
   userId: string
+  page: number
 }
 
 interface IPropsFetchUserCheckInsHistoryUseCaseResponse {
@@ -14,8 +15,12 @@ export class FetchUserCheckInsHistoryUseCase {
 
   async execute({
     userId,
+    page,
   }: IPropsFetchUserCheckInsHistoryUseCaseRequest): Promise<IPropsFetchUserCheckInsHistoryUseCaseResponse> {
-    const checkIns = await this.checkInsRepository.findManyByUserId(userId)
+    const checkIns = await this.checkInsRepository.findManyByUserId(
+      userId,
+      page,
+    )
 
     return {
       checkIns,
