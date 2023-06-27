@@ -31,7 +31,6 @@ describe('Search Gyms Use Case', () => {
       query: 'JavaScript',
       page: 1,
     })
-    console.log(gyms)
     expect(gyms).toHaveLength(1)
     expect(gyms).toEqual([expect.objectContaining({ title: 'JavaScript Gym' })])
   })
